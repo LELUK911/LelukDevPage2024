@@ -3,6 +3,8 @@ import * as walletAdapterReact from '@solana/wallet-adapter-react';
 import * as walletAdapterWallets from '@solana/wallet-adapter-wallets';
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import '@solana/wallet-adapter-react-ui/styles.css';
+import {NavBar} from '../components/navBar/NavBar'
+import {Footer} from '../components/footer/Footer'
 
 
 
@@ -23,7 +25,9 @@ export const Layout = ({ children }) => {
             <walletAdapterReact.ConnectionProvider endpoint={endopoint}>
                 <walletAdapterReact.WalletProvider wallets={wallets}>
                     <WalletModalProvider>
+                        <NavBar/>
                         {children}
+                        <Footer/>
                     </WalletModalProvider>
                 </walletAdapterReact.WalletProvider>
             </walletAdapterReact.ConnectionProvider>

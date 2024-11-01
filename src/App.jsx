@@ -1,20 +1,26 @@
-import Body from "./components/body/body"
-import { Footer } from "./components/footer/Footer"
-import { NavBar } from "./components/navBar/NavBar"
-import { Layout } from "./utils/Layout"
+import Home from "./pages/Home"
+import ProjectSection from './pages/PortfolioProject'
+import WriteMeSection from './pages/WriteMe'
+
+import {BrowserRouter as Router,Route, Routes} from 'react-router-dom'
 
 function App() {
 
 
 
   return (
-    <>
-      <Layout>
-        <NavBar />
-        <Body />
-        <Footer />
-      </Layout>
-    </>
+    <Router>
+ 
+        <Routes>
+          <Route>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/ProjectSection" element={<ProjectSection/>}/>
+            <Route path="/WriteMeSection" element={<WriteMeSection/>}/>
+
+          </Route>
+        </Routes>
+
+    </Router>
   )
 }
 
